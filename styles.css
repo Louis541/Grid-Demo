@@ -1,0 +1,173 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    height: 100%;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Grid Container Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 5fr 1.2fr; /* Text: 2fr, Images: 5fr, Links: 1.2fr */
+    grid-template-rows: auto 1fr auto; /* Header, main content, footer */
+    gap: 16px;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Header Section */
+header {
+    grid-column: 1 / span 3; /* Header spans all columns */
+    padding: 16px;
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 4px solid #ffffff;
+}
+
+
+/* About Section (Text on Left Side) */
+.about-wrapper {
+    grid-column: 1 / 2; /* Leftmost column */
+    grid-row: 2 / 3; /* Main content area */
+    padding: 16px;
+    overflow-y: auto; /* Allow scrolling for text */
+    background-color: #fff;
+    border-right: 2px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 8px; /* Add subtle rounding for modern design */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-wrapper h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.about-wrapper p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.about-wrapper p:last-child {
+    margin-bottom: 0;
+}
+
+.about-wrapper span {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Image Section (Middle Column) */
+.img-wrapper {
+    grid-column: 2 / 3; /* Middle column */
+    grid-row: 2 / 3; /* Main content area */
+    padding: 16px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto; /* Enable vertical scrolling for images */
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-wrapper img {
+    width: 100%; /* Full width with padding */
+    max-width: 800px; /* Limit max width */
+    max-height: calc(80vh - 32px); /* Ensure image fits within viewport minus padding */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for modern design */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Link Section (Top-Right) */
+.link-wrapper {
+    grid-column: 3 / 4; /* Rightmost column */
+    grid-row: 2 / 3; /* Main content area */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background-color: #fff;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-left: 2px solid #ddd;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-wrapper a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.link-wrapper a:hover {
+    color: #0056b3; /* Darker blue for hover effect */
+    transform: translateX(4px); /* Slight movement on hover */
+}
+
+/* Footer Section */
+footer {
+    grid-column: 1 / span 3; /* Footer spans all columns */
+    grid-row: 3 / 4; /* Positioned at the bottom of the grid */
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Scrollbar Styling */
+.img-wrapper::-webkit-scrollbar,
+.link-wrapper::-webkit-scrollbar,
+.about-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.img-wrapper::-webkit-scrollbar-thumb,
+.link-wrapper::-webkit-scrollbar-thumb,
+.about-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.img-wrapper::-webkit-scrollbar-thumb:hover,
+.link-wrapper::-webkit-scrollbar-thumb:hover,
+.about-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Hover Effects for Images (Optional) */
+.img-wrapper img:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+
+
+
